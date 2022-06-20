@@ -141,7 +141,7 @@
         android:layout_height="50dp"
         android:layout_marginStart="20dp"
         android:layout_marginTop="50dp"
-        android:text="Next"
+        android:text="Lock In Answer"
         android:background="@drawable/round_back_green20"
         android:textAllCaps="false"
         android:textColor="#FFFFFF"

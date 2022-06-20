@@ -45,11 +45,11 @@ Finish the quiz before the timer runs out.
 
 If the timer runs out, any correct questions will be recorded.
 
-Your correct answers will automatically be added to the High Score Table.
+Your correct answers will automatically be added to a history of your personal scores.
 
-You can click on &quot;Check High Scores&quot; to see a list of the top 10 scores.
+You can click on &quot;Check Score History&quot; to see a list of your scores.
 
-Good Luck!"
+\n\nGood Luck!"
         android:paddingBottom="30dp"
         android:gravity="center"
         android:textColor="#FFFFFF"
