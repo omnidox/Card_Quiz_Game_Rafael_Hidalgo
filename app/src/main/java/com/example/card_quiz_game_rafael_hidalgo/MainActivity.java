@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+//This will act as the user Homepage. From here the user can see the rules, log out, play the game, and see their score history.
 public class MainActivity extends AppCompatActivity {
     private ISharedPreference sharedPreference;
     private TextView userView;
@@ -25,12 +26,15 @@ public class MainActivity extends AppCompatActivity {
         sharedPreference = new SecuredSharePref("MYPREFS", MainActivity.this);
 
 
+        //gets user info via share preferences
         String userFirstName = sharedPreference.getString("firstname","nofirstnameonmain");
         String userLastName = sharedPreference.getString("lastname","nolastnameonmain");
 
+        //welcomes the user
         userView.setText("Welcome!\n" + userFirstName +" "+ userLastName);
 
 
+        //Starts the game
         btnPlay.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -39,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //Logs the user out
         btnLogOut.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -48,6 +53,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //Has the user go to the rules page
         btnRules.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -56,6 +62,8 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+
+        //Enables the user to see their previous scores
         btnHigh.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -67,6 +75,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
     @Override
+    //same functionality as the log out button.
     public void onBackPressed() {
         Intent intent = new Intent(MainActivity.this,LoginRegisterPage.class );
         startActivity(intent);

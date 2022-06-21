@@ -3,6 +3,8 @@ package com.example.card_quiz_game_rafael_hidalgo;
 import java.util.ArrayList;
 import java.util.List;
 
+//here we populate our questionlist with questions, their relevant answers, and user supplied answers.
+
 public class QuestionsBank {
 
     private static List<QuestionsList> quizQuestions(){

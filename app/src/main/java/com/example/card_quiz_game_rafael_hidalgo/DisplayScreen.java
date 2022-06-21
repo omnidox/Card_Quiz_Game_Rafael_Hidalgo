@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.widget.TextView;
 
+
+//Displays activity for testing
 public class DisplayScreen extends AppCompatActivity {
 
     //In this App, an encrypted shared preference is implemented to save user information.

@@ -70,6 +70,7 @@ public class QuizActivity extends AppCompatActivity {
         option3.setText(questionsLists.get(0).getOption3());
         option4.setText(questionsLists.get(0).getOption4());
 
+        //when a button is clicked, it will highlight that button, and return other buttons to default color
         option1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -173,6 +174,7 @@ public class QuizActivity extends AppCompatActivity {
             }
         });
 
+        //Sets button to lock in answer, and then to finally submit answer.
         nextBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -180,6 +182,7 @@ public class QuizActivity extends AppCompatActivity {
                 if (selectedOptionByUser.isEmpty()) {
                     Toast.makeText(QuizActivity.this, "Please Select an Answer Before Proceeding", Toast.LENGTH_SHORT).show();
                 } else if (nextBtn.getText().toString().equals("Lock In Answer")) {
+                    //Reveals answer once the "lock in answer button is pressed"
                     revealAnswer();
                     if ((currentQuestionPosition + 1) == questionsLists.size()) {
                         nextBtn.setText("Submit Quiz");
@@ -187,6 +190,7 @@ public class QuizActivity extends AppCompatActivity {
                         nextBtn.setText("Next");
                     }
                 } else if (nextBtn.getText().toString().equals("Next")||nextBtn.getText().toString().equals("Submit Quiz")) {
+                    //updates activity to show the next question
                     changeNextQuestion();
                     if(!nextBtn.getText().toString().equals("Submit Quiz")){
                     nextBtn.setText("Lock In Answer");}
@@ -196,6 +200,7 @@ public class QuizActivity extends AppCompatActivity {
             }
         });
 
+        //Cancels Quiz if back button is clicked
         backbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -208,6 +213,8 @@ public class QuizActivity extends AppCompatActivity {
         });
     }
 
+
+    //a function that changes to the next question
     private void changeNextQuestion() {
 
         currentQuestionPosition++;
@@ -251,6 +258,7 @@ public class QuizActivity extends AppCompatActivity {
 
     }
 
+    //Starts the timer for quiz
     private void startTimer(TextView timerTextView) {
 
 
@@ -288,6 +296,7 @@ public class QuizActivity extends AppCompatActivity {
                     seconds--;
                 }
 
+                //Timer runs on background, this ensures the timer is updated in UI
                 runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
@@ -313,6 +322,7 @@ public class QuizActivity extends AppCompatActivity {
         }, 1000, 1000);
     }
 
+    //function to retrieve the amount of correct answers at the end of the test.
     private int getCorrectAnswers() {
 
         int correctAnswers = 0;
@@ -331,6 +341,7 @@ public class QuizActivity extends AppCompatActivity {
     }
 
 
+    //function to retrieve the amount of incorrect answers at the end of the test
     private int getInCorrectAnswers() {
 
         int inCorrectAnswers = 0;
@@ -348,6 +359,7 @@ public class QuizActivity extends AppCompatActivity {
         return inCorrectAnswers;
     }
 
+    //cancels the test on pressing back button
     @Override
     public void onBackPressed() {
         super.onBackPressed();
@@ -359,6 +371,7 @@ public class QuizActivity extends AppCompatActivity {
         finish();
     }
 
+    //reveals the correct answer and saves user supplied answer
     private void revealAnswer() {
 
         final String getAnswer = questionsLists.get(currentQuestionPosition).getAnswer();

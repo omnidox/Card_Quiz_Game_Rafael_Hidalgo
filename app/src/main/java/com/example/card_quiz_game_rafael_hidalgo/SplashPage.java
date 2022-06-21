@@ -15,6 +15,7 @@ public class SplashPage extends AppCompatActivity {
         setContentView(R.layout.activity_splash_page);
 
 
+        //goes to the splash page when the app opens
         Button btnContinue = findViewById(R.id.clickContinueBtn);
 
         btnContinue.setOnClickListener(new View.OnClickListener() {

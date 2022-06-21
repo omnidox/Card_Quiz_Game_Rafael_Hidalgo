@@ -6,6 +6,8 @@ import android.content.SharedPreferences;
 import androidx.security.crypto.EncryptedSharedPreferences;
 import androidx.security.crypto.MasterKey;
 
+
+//Implements a secured share preferences
 public class SecuredSharePref implements ISharedPreference {
     private SharedPreferences sharedPreferences;
 

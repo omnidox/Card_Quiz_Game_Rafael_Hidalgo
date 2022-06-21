@@ -28,8 +28,11 @@ public class PrevScores extends AppCompatActivity {
 
         String scoreHistory = sharedPreference.getString(userEmail + password + "score","No History Yet");
 
+        //gets user shared history via shared preferences
         userHistoryView.setText(scoreHistory);
 
+
+        //goes back to homepage
         homePagebtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -40,6 +43,8 @@ public class PrevScores extends AppCompatActivity {
             }
         });
 
+
+        //clears User History
         clearHistoryBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

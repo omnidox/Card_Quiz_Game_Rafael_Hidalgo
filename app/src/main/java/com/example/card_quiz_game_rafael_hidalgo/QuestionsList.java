@@ -1,5 +1,7 @@
 package com.example.card_quiz_game_rafael_hidalgo;
 
+
+//used to make a list of with questions, their relevant answers, and user supplied answers.
 public class QuestionsList {
 
     private String question, option1, option2, option3, option4, answer;

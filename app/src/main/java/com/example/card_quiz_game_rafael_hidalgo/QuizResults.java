@@ -16,6 +16,8 @@ public class QuizResults extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz_results);
+
+        //this is used to get time and date in which test was completed
         String date = (DateFormat.format("MM-dd-yyyy hh:mm:ss", new java.util.Date()).toString());
 
         sharedPreferences = new SecuredSharePref("MYPREFS", QuizResults.this);
@@ -35,6 +37,8 @@ public class QuizResults extends AppCompatActivity {
 
         String scoreHistory = sharedPreferences.getString(userEmail + password + "score","");
 
+
+        //updates the score history in shared preferences
         if (scoreHistory.isEmpty()) {
             sharedPreferences.putString(userEmail + password + "score", "Score: " + String.valueOf(getCorrectAnswers) + " Received on " + date + "\n\n");
         }
@@ -42,6 +46,8 @@ public class QuizResults extends AppCompatActivity {
             sharedPreferences.putString(userEmail + password + "score", scoreHistory + "Score: " + String.valueOf(getCorrectAnswers) + " Received on " + date + "\n\n");
         }
 
+
+        //goes back to homepage
         homePageBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -51,6 +57,7 @@ public class QuizResults extends AppCompatActivity {
         });
     }
 
+    //goes back to homepage
     @Override
     public void onBackPressed() {
         startActivity(new Intent(QuizResults.this, MainActivity.class));

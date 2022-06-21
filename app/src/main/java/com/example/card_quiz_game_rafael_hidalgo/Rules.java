@@ -9,6 +9,8 @@ import android.widget.Button;
 
 public class Rules extends AppCompatActivity {
 
+
+    //Simple Rules Page
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
